@@ -11,15 +11,13 @@ import lombok.*;
 public class Notificatied extends AbstractEvent {
 
     private Long id;
-    private String customerId;
     private String menuInfo;
-    private String customerId;
-    private String menuInfo;
-    private String deliveryStatus;
     private String storeId;
     private Integer qty;
     private String riderId;
     private String orderId;
+    private String customerId;
+    private String deliveryStatus;
 
     public Notificatied(Notification aggregate){
         super(aggregate);

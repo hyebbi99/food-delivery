@@ -2,13 +2,11 @@ package food.delivery.domain;
 
 import food.delivery.domain.*;
 import food.delivery.infra.AbstractEvent;
-import java.util.*;
 import lombok.*;
-
-
+import java.util.*;
 @Data
 @ToString
-public class OrderCancelled extends AbstractEvent {
+public class CookFinished extends AbstractEvent {
 
     private Long id;
     private String orderId;
@@ -18,11 +16,6 @@ public class OrderCancelled extends AbstractEvent {
     private Integer qty;
     private String deliveryStatus;
     private String storeId;
-
-    public OrderCancelled(StoreOrder aggregate){
-        super(aggregate);
-    }
-    public OrderCancelled(){
-        super();
-    }
 }
+
+

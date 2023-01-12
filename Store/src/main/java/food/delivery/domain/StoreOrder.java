@@ -2,8 +2,8 @@ package food.delivery.domain;
 
 import food.delivery.domain.OrderAccepted;
 import food.delivery.domain.OrderRejected;
-import food.delivery.domain.OrderCancelled;
 import food.delivery.domain.CookStarted;
+import food.delivery.domain.CookFinished;
 import food.delivery.StoreApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -84,13 +84,13 @@ public class StoreOrder  {
 
 
 
-        OrderCancelled orderCancelled = new OrderCancelled(this);
-        orderCancelled.publishAfterCommit();
-
-
-
         CookStarted cookStarted = new CookStarted(this);
         cookStarted.publishAfterCommit();
+
+
+
+        CookFinished cookFinished = new CookFinished(this);
+        cookFinished.publishAfterCommit();
 
     }
 

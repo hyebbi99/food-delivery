@@ -1,8 +1,8 @@
 package food.delivery.domain;
 
 import food.delivery.domain.Ordered;
-import food.delivery.domain.OrderCancelled;
 import food.delivery.domain.KakaoNotified;
+import food.delivery.domain.OrderCancelled;
 import food.delivery.FrontApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -78,13 +78,16 @@ public class Order  {
 
 
 
-        OrderCancelled orderCancelled = new OrderCancelled(this);
-        orderCancelled.publishAfterCommit();
-
-
-
         KakaoNotified kakaoNotified = new KakaoNotified(this);
         kakaoNotified.publishAfterCommit();
+
+    }
+    @PostRemove
+    public void onPostRemove(){
+
+
+        OrderCancelled orderCancelled = new OrderCancelled(this);
+        orderCancelled.publishAfterCommit();
 
     }
     @PreRemove
@@ -141,7 +144,7 @@ public class Order  {
 
         
     }
-    public static void updateStatus(OrderCancelled orderCancelled){
+    public static void updateStatus(CookStarted cookStarted){
 
         /** Example 1:  new item 
         Order order = new Order();
@@ -151,7 +154,7 @@ public class Order  {
 
         /** Example 2:  finding and process
         
-        repository().findById(orderCancelled.get???()).ifPresent(order->{
+        repository().findById(cookStarted.get???()).ifPresent(order->{
             
             order // do something
             repository().save(order);
@@ -194,6 +197,27 @@ public class Order  {
         /** Example 2:  finding and process
         
         repository().findById(deliveryFinished.get???()).ifPresent(order->{
+            
+            order // do something
+            repository().save(order);
+
+
+         });
+        */
+
+        
+    }
+    public static void updateStatus(CookFinished cookFinished){
+
+        /** Example 1:  new item 
+        Order order = new Order();
+        repository().save(order);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(cookFinished.get???()).ifPresent(order->{
             
             order // do something
             repository().save(order);

@@ -67,15 +67,13 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "customerId", value: "customerId" },
-                    { text: "menuInfo", value: "menuInfo" },
-                    { text: "customerId", value: "customerId" },
                     { text: "menuInfo", value: "menuInfo" },
                     { text: "deliveryStatus", value: "deliveryStatus" },
                     { text: "storeId", value: "storeId" },
                     { text: "qty", value: "qty" },
                     { text: "riderId", value: "riderId" },
                     { text: "orderId", value: "orderId" },
+                    { text: "cutomerId", value: "cutomerId" },
                 ],
             notification : [],
             newValue: {},
@@ -93,15 +91,13 @@
             this.values = temp.data._embedded.notifications;
 
             this.newValue = {
-                'customerId': '',
-                'menuInfo': '',
-                'customerId': '',
                 'menuInfo': '',
                 'deliveryStatus': '',
                 'storeId': '',
                 'qty': 0,
                 'riderId': '',
                 'orderId': '',
+                'cutomerId': '',
             }
         },
         methods: {

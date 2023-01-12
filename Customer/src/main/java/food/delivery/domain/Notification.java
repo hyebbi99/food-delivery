@@ -29,24 +29,6 @@ public class Notification  {
     
     
     
-    private String customerId;
-    
-    
-    
-    
-    
-    private String menuInfo;
-    
-    
-    
-    
-    
-    private String customerId;
-    
-    
-    
-    
-    
     private String menuInfo;
     
     
@@ -78,6 +60,12 @@ public class Notification  {
     
     
     private String orderId;
+    
+    
+    
+    
+    
+    private String cutomerId;
 
     @PostPersist
     public void onPostPersist(){
