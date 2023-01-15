@@ -1,6 +1,6 @@
 package food.delivery.domain;
 
-import food.delivery.domain.Ordered;
+import food.delivery.domain.OrderPlaced;
 import food.delivery.domain.KakaoNotified;
 import food.delivery.domain.OrderCancelled;
 import food.delivery.FrontApplication;
@@ -73,8 +73,8 @@ public class Order  {
     public void onPostPersist(){
 
 
-        Ordered ordered = new Ordered(this);
-        ordered.publishAfterCommit();
+        OrderPlaced orderPlaced = new OrderPlaced(this);
+        orderPlaced.publishAfterCommit();
 
 
 
