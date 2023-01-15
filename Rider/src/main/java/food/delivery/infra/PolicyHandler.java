@@ -22,6 +22,22 @@ public class PolicyHandler{
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
 
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CookFinished'")
+    public void wheneverCookFinished_CookInfoTransfer(@Payload CookFinished cookFinished){
+
+        CookFinished event = cookFinished;
+        System.out.println("\n\n##### listener CookInfoTransfer : " + cookFinished + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        Delivery.cookInfoTransfer(event);
+        
+
+        
+
+    }
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CookStarted'")
     public void wheneverCookStarted_CookInfoTransfer(@Payload CookStarted cookStarted){
 

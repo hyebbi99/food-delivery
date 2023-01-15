@@ -102,6 +102,27 @@ public class Delivery  {
 
 
 
+    public static void cookInfoTransfer(CookFinished cookFinished){
+
+        /** Example 1:  new item 
+        Delivery delivery = new Delivery();
+        repository().save(delivery);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(cookFinished.get???()).ifPresent(delivery->{
+            
+            delivery // do something
+            repository().save(delivery);
+
+
+         });
+        */
+
+        
+    }
     public static void cookInfoTransfer(CookStarted cookStarted){
 
         /** Example 1:  new item 
