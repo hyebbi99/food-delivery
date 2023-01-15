@@ -1,6 +1,6 @@
 package food.delivery.domain;
 
-import food.delivery.domain.OrderPlaced;
+import food.delivery.domain.Ordered;
 import food.delivery.domain.KakaoNotified;
 import food.delivery.domain.OrderCancelled;
 import food.delivery.FrontApplication;
@@ -73,8 +73,8 @@ public class Order  {
     public void onPostPersist(){
 
 
-        OrderPlaced orderPlaced = new OrderPlaced(this);
-        orderPlaced.publishAfterCommit();
+        Ordered ordered = new Ordered(this);
+        ordered.publishAfterCommit();
 
 
 
@@ -82,8 +82,8 @@ public class Order  {
         kakaoNotified.publishAfterCommit();
 
     }
-    @PostRemove
-    public void onPostRemove(){
+    @PostUpdate
+    public void onPostUpdate(){
 
 
         OrderCancelled orderCancelled = new OrderCancelled(this);

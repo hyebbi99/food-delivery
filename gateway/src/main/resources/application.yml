@@ -19,7 +19,7 @@ spring:
         - id: Customer
           uri: http://localhost:8083
           predicates:
-            - Path=/notifications/**, 
+            - Path=/notifications/**, /orderInfos/**
         - id: Rider
           uri: http://localhost:8084
           predicates:
@@ -58,7 +58,7 @@ spring:
         - id: Customer
           uri: http://customer:8080
           predicates:
-            - Path=/notifications/**, 
+            - Path=/notifications/**, /orderInfos/**
         - id: Rider
           uri: http://rider:8080
           predicates:

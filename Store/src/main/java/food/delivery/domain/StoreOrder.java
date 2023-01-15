@@ -104,7 +104,7 @@ public class StoreOrder  {
     public void orderConfirm(){
     }
 
-    public static void orderInfoTransfer(OrderPlaced orderPlaced){
+    public static void orderInfoTransfer(Ordered ordered){
 
         /** Example 1:  new item 
         StoreOrder storeOrder = new StoreOrder();
@@ -114,7 +114,7 @@ public class StoreOrder  {
 
         /** Example 2:  finding and process
         
-        repository().findById(orderPlaced.get???()).ifPresent(storeOrder->{
+        repository().findById(ordered.get???()).ifPresent(storeOrder->{
             
             storeOrder // do something
             repository().save(storeOrder);

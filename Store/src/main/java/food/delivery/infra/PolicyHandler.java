@@ -22,11 +22,11 @@ public class PolicyHandler{
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderPlaced'")
-    public void wheneverOrderPlaced_OrderInfoTransfer(@Payload OrderPlaced orderPlaced){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Ordered'")
+    public void wheneverOrdered_OrderInfoTransfer(@Payload Ordered ordered){
 
-        OrderPlaced event = orderPlaced;
-        System.out.println("\n\n##### listener OrderInfoTransfer : " + orderPlaced + "\n\n");
+        Ordered event = ordered;
+        System.out.println("\n\n##### listener OrderInfoTransfer : " + ordered + "\n\n");
 
 
         
