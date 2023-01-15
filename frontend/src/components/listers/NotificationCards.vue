@@ -68,15 +68,13 @@
             me.values = temp.data._embedded.notifications;
             
             me.newValue = {
-                'customerId': '',
-                'menuInfo': '',
-                'customerId': '',
                 'menuInfo': '',
                 'deliveryStatus': '',
                 'storeId': '',
                 'qty': 0,
                 'riderId': '',
                 'orderId': '',
+                'cutomerId': '',
             }
         },
         methods:{

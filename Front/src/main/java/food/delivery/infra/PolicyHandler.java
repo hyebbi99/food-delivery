@@ -54,11 +54,11 @@ public class PolicyHandler{
         
 
     }
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCancelled'")
-    public void wheneverOrderCancelled_UpdateStatus(@Payload OrderCancelled orderCancelled){
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CookStarted'")
+    public void wheneverCookStarted_UpdateStatus(@Payload CookStarted cookStarted){
 
-        OrderCancelled event = orderCancelled;
-        System.out.println("\n\n##### listener UpdateStatus : " + orderCancelled + "\n\n");
+        CookStarted event = cookStarted;
+        System.out.println("\n\n##### listener UpdateStatus : " + cookStarted + "\n\n");
 
 
         
@@ -91,6 +91,22 @@ public class PolicyHandler{
 
         DeliveryFinished event = deliveryFinished;
         System.out.println("\n\n##### listener UpdateStatus : " + deliveryFinished + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        Order.updateStatus(event);
+        
+
+        
+
+    }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CookFinished'")
+    public void wheneverCookFinished_UpdateStatus(@Payload CookFinished cookFinished){
+
+        CookFinished event = cookFinished;
+        System.out.println("\n\n##### listener UpdateStatus : " + cookFinished + "\n\n");
 
 
         

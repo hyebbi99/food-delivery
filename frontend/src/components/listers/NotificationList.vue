@@ -17,21 +17,17 @@
                             
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ CustomerId :  {{data.customerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ MenuInfo :  {{data.menuInfo }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ CustomerId :  {{data.customerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ MenuInfo :  {{data.menuInfo }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ DeliveryStatus :  {{data.deliveryStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ StoreId :  {{data.storeId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Qty :  {{data.qty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ RiderId :  {{data.riderId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ OrderId :  {{data.orderId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CutomerId :  {{data.cutomerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -113,15 +109,13 @@
             this.values = temp.data._embedded.notifications;
             
             this.newValue = {
-                'customerId': '',
-                'menuInfo': '',
-                'customerId': '',
                 'menuInfo': '',
                 'deliveryStatus': '',
                 'storeId': '',
                 'qty': 0,
                 'riderId': '',
                 'orderId': '',
+                'cutomerId': '',
             }
         },
         methods: {
