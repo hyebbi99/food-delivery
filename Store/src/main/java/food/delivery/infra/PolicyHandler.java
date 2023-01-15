@@ -38,6 +38,22 @@ public class PolicyHandler{
         
 
     }
+    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCancelled'")
+    public void wheneverOrderCancelled_OrderInfoTransfer(@Payload OrderCancelled orderCancelled){
+
+        OrderCancelled event = orderCancelled;
+        System.out.println("\n\n##### listener OrderInfoTransfer : " + orderCancelled + "\n\n");
+
+
+        
+
+        // Sample Logic //
+        StoreOrder.orderInfoTransfer(event);
+        
+
+        
+
+    }
 
 }
 

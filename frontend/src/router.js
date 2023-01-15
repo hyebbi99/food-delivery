@@ -14,6 +14,8 @@ import StoreOrderDetail from "./components/listers/StoreOrderDetail"
 import NotificationManager from "./components/listers/NotificationCards"
 import NotificationDetail from "./components/listers/NotificationDetail"
 
+import OrderInfoView from "./components/OrderInfoView"
+import OrderInfoViewDetail from "./components/OrderInfoViewDetail"
 import DeliveryManager from "./components/listers/DeliveryCards"
 import DeliveryDetail from "./components/listers/DeliveryDetail"
 
@@ -55,6 +57,16 @@ export default new Router({
                 component: NotificationDetail
             },
 
+            {
+                path: '/orderInfos',
+                name: 'OrderInfoView',
+                component: OrderInfoView
+            },
+            {
+                path: '/orderInfos/:id',
+                name: 'OrderInfoViewDetail',
+                component: OrderInfoViewDetail
+            },
             {
                 path: '/deliveries',
                 name: 'DeliveryManager',

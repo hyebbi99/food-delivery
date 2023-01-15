@@ -82,8 +82,8 @@ public class Order  {
         kakaoNotified.publishAfterCommit();
 
     }
-    @PostRemove
-    public void onPostRemove(){
+    @PostUpdate
+    public void onPostUpdate(){
 
 
         OrderCancelled orderCancelled = new OrderCancelled(this);

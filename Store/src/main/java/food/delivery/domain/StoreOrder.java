@@ -101,6 +101,8 @@ public class StoreOrder  {
 
 
 
+    public void orderConfirm(){
+    }
 
     public static void orderInfoTransfer(Ordered ordered){
 
@@ -113,6 +115,27 @@ public class StoreOrder  {
         /** Example 2:  finding and process
         
         repository().findById(ordered.get???()).ifPresent(storeOrder->{
+            
+            storeOrder // do something
+            repository().save(storeOrder);
+
+
+         });
+        */
+
+        
+    }
+    public static void orderInfoTransfer(OrderCancelled orderCancelled){
+
+        /** Example 1:  new item 
+        StoreOrder storeOrder = new StoreOrder();
+        repository().save(storeOrder);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(orderCancelled.get???()).ifPresent(storeOrder->{
             
             storeOrder // do something
             repository().save(storeOrder);
